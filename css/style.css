@@ -1,0 +1,53 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Noto Serif KR', serif;
+    color:#1d1d1f;
+    background:#fff;
+}
+
+.hero{
+    position:relative;
+    height:100vh;
+}
+
+.hero img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.overlay{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    color:white;
+    text-align:center;
+}
+
+.overlay h1{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.overlay p{
+    font-size:18px;
+}
+
+.invite{
+    padding:100px 30px;
+    text-align:center;
+}
+
+.invite h2{
+    margin-bottom:30px;
+}
+
+.invite p{
+    line-height:2;
+}
