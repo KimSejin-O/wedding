@@ -8,7 +8,18 @@
 <title>Wedding Invitation</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500&display=swap" rel="stylesheet">
+.fade-up{
+    opacity:0;
+    transform:translateY(50px);
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
 
+.fade-up.show{
+    opacity:1;
+    transform:translateY(0);
+}
 <style>
 
 *{
@@ -94,7 +105,7 @@ color:#888;
 
 <body>
 
-<section class="hero">
+<section class="section fade-up">
 
 <img src="보은대추.png">
 
@@ -124,7 +135,7 @@ color:#888;
 
 </section>
 
-<section class="section">
+<section class="section fade-up">
 
 <h2>Wedding Day</h2>
 
@@ -172,7 +183,35 @@ navigator.clipboard.writeText(
 alert('복사되었습니다.');
 
 }
+const observer = new IntersectionObserver(
 
+(entries)=>{
+
+entries.forEach((entry)=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add('show');
+
+}
+
+});
+
+},
+
+{
+threshold:0.2
+}
+
+);
+
+document
+.querySelectorAll('.fade-up')
+.forEach((el)=>{
+
+observer.observe(el);
+
+});
 </script>
 
 </body>
